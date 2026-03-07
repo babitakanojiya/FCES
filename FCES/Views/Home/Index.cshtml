@@ -1,0 +1,335 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function showNextSlide() {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }
+
+        // keep running forever
+        setInterval(showNextSlide, 4000);
+    });
+        function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+</script>
+<section class="hero">
+    <div class="slider">
+        <img src="@Url.Content("~/image/hedder home page1.jfif")" alt="Pipeline 1" class="slide active" />
+        <img src="@Url.Content("~/image/image2.jfif")" alt="Pipeline 2" class="slide" />
+        @* <img src="@Url.Content("~/image/image3.jfif")" alt="Pipeline 3" class="slide" /> *@
+    </div>
+
+    <div class="overlay-content">
+        <h1>Master Quality<br />Courses with FCES</h1>
+        <p>Delivering world-class engineering excellence in the energy sector.</p>
+        <button class="hero-btn">Click Here</button>
+    </div>
+</section>
+
+
+
+
+<section class="stats">
+
+    <!-- FULL WIDTH BOXES -->
+    <div class="stats-cards">
+
+        <div class="stat-card">
+            <div class="stat-title">The No. 1</div>
+            <div class="stat-sub">Institute For NDT & QA / QC</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">Top Instructors</div>
+            <div class="stat-sub">Skilled & Job Oriented</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">Training</div>
+            <div class="stat-sub">Practical, Certified & Job-Oriented Programs</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">Manpower Solutions</div>
+            <div class="stat-sub">Certified, Skilled & Industry-Ready Professionals</div>
+        </div>
+
+    </div>
+
+
+
+    <!-- NORMAL CONTAINER CONTENT -->
+    @* <div class="container">
+        <div class="about">
+            <h3>About Advantech NDT Academy</h3>
+            <p>
+                Advantech NDT Academy is a renowned & reputed institute providing training for NDT & QA/QC.
+            </p>
+            <a class="read-more" href="#">Read More</a>
+        </div>
+    </div> *@
+    <section class="premium-about dark-section">
+
+        <div class="container about-flex">
+
+            <!-- Left Image -->
+            <div class="about-image" data-aos="fade-right">
+                <img src="@Url.Content("~/image/fourm consulting and engineers services.png")" alt="FCES Services" />
+            </div>
+
+            <!-- Right Content -->
+            <div class="about-content" data-aos="fade-left">
+                <h2>FOURM CONSULTING AND ENGINEERS SERVICES (FCES)</h2>
+                <p>
+                    FCES is a leading industrial training, inspection, and manpower
+                    service provider supporting Oil & Gas, Power, Fabrication, and
+                    Infrastructure projects in India and abroad.
+                </p>
+
+                <p>
+                    We are committed to quality, safety, compliance, and skill development,
+                    delivering industry-ready professionals aligned with international standards.
+                </p>
+
+                <ul>
+                    <li><i class="fa fa-check-circle"></i> Industrial Training Programs</li>
+                    <li><i class="fa fa-check-circle"></i> Inspection & QA/QC Services</li>
+                    <li><i class="fa fa-check-circle"></i> Skilled Manpower Supply</li>
+                </ul>
+
+                <a href="#" class="premium-btn">Explore Services</a>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="premium-about">
+        <div class="container about-flex">
+
+            <!-- Left Content -->
+            <div class="about-content" data-aos="fade-right">
+                <h2 class="section-title">Why Choose FCES?</h2>
+
+                <ul class="about-list">
+                    <li><i class="fa fa-check-circle"></i> One-stop solution for Training, Inspection & Manpower</li>
+                    <li><i class="fa fa-check-circle"></i> Experienced faculty & industry professionals</li>
+                    <li><i class="fa fa-check-circle"></i> International code & standard compliance</li>
+                    <li><i class="fa fa-check-circle"></i> Strong placement & career support</li>
+                    <li><i class="fa fa-check-circle"></i> Practical learning with industrial exposure</li>
+                    <li><i class="fa fa-check-circle"></i> Trusted by Oil & Gas, Power & Infrastructure sectors</li>
+                </ul>
+            </div>
+
+            <!-- Right Image -->
+            <div class="about-image" data-aos="fade-left">
+                <img src="@Url.Content("~/image/why choose fces.jpg")" alt="FCES Training" />
+            </div>
+
+        </div>
+    </section>
+    <section class="premium-about">
+
+        <div class="container about-flex">
+            <div class="about-content" data-aos="fade-right">
+                <h2>About Advantech NDT Academy</h2>
+                <p>
+                    Advantech NDT Academy is a renowned & reputed institute providing
+                    professional training in NDT & QA/QC programs.
+                </p>
+                <p>
+                    We focus on delivering practical knowledge, industrial exposure,
+                    and internationally recognized certification programs.
+                </p>
+
+                <ul>
+                    <li><i class="fa fa-check-circle"></i> NDT Level I, II & III Training</li>
+                    <li><i class="fa fa-check-circle"></i> QA/QC Certification Programs</li>
+                    <li><i class="fa fa-check-circle"></i> Placement Assistance</li>
+                </ul>
+
+                @* <a href="#" class="premium-btn">Read More</a> *@
+                <a asp-controller="AboutUs" asp-action="Index" class="premium-btn">
+                    Read More
+                </a>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                
+                <img src="@Url.Content("~/image/about advantech ndt academy.png")" alt="Advantech Training" />
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    
+</section>
+<section class="courses-band">
+    <div class="overlay">
+        <div class="container">
+            <h2 class="band-title">Our Core Services</h2>
+
+            <div class="course-cards">
+
+                <div class="course-card" onclick="openModal('ndtModal')">
+                    <img src="~/image/non-destructive testing.png" alt="course1" />
+                    <div class="course-title">Non-Destructive Testing (NDT) & Inspection</div>
+                </div>
+
+                <div class="course-card" onclick="openModal('ndtThirdparty')">
+                    <img src="~/image/third-party mechanical.png" alt="course2" />
+                    <div class="course-title">Third-Party Mechanical Inspection</div>
+                </div>
+
+                <div class="course-card" onclick="openModal('ndtmanpower')">
+                    <img src="~/image/manpower.png" alt="course3" />
+                    <div class="course-title">Manpower Supply Services</div>
+                </div>
+                <div class="course-card" onclick="openModal('ndttrainig')">
+                    <img src="~/image/training & skill.png" alt="course3" />
+                    <div class="course-title">Training & Skill Development (FCES Institute)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="ndtModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('ndtModal')">&times;</span>
+
+        <h2>Non-Destructive Testing (NDT) & Inspection</h2>
+
+        <p>
+            We provide reliable NDT and Third-Party Mechanical Inspection services to ensure
+            asset integrity, safety, and regulatory compliance without affecting serviceability.
+        </p>
+
+        <h3>Our NDT Services Include:</h3>
+
+        <ul class="service-list">
+            <li>Ultrasonic Testing (UT)</li>
+            <li>Radiographic Testing (RT)</li>
+            <li>Magnetic Particle Testing (MPT)</li>
+            <li>Dye Penetrant Testing (DPT)</li>
+            <li>Visual Testing (VT)</li>
+            <li>Positive Material Identification (PMI)</li>
+            <li>Hardness Testing</li>
+        </ul>
+
+        <h3>Inspection Coverage</h3>
+
+        <p>
+            Piping, Pipelines, Pressure Vessels, Heat Exchangers, Storage Tanks,
+            Structural Steel, Blasting & Painting, Mechanical Installation,
+            Hydro Testing, and Commissioning.
+        </p>
+
+    </div>
+</div>
+<div id="ndtThirdparty" class="modal">
+    <div class="modal-content">
+        @* <span class="close" onclick="closeModal()">×</span> *@
+        <span class="close" onclick="closeModal('ndtThirdparty')">&times;</span>
+        <h2>Third-Party Mechanical Inspection</h2>
+
+        <p>
+            As an independent inspection agency, FCES supports EPC contractors, asset owners, 
+            and manufacturers with unbiased inspection services across:
+        </p>
+        <ul class="service-list">
+            <li>Material & welding inspection</li>
+            <li>•	NDT surveillance</li>
+            <li>Equipment & piping inspection</li>
+            <li>  Storage tank & structural inspection</li>
+            <li>Testing, commissioning & documentation review</li>
+            
+        </ul>
+
+        <h3>All inspections are performed in compliance with ASME, API, ISO, and IS standards.</h3>
+
+    </div>
+</div>
+<div id="ndtmanpower" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('ndtmanpower')">&times;</span>
+
+        <h2>Manpower Supply Services</h2>
+
+        <p>
+            We supply skilled, certified, and project-ready manpower for short-term, long-term, shutdown, and EPC projects.
+        </p>
+
+        <h3>Manpower Categories:</h3>
+
+        <ul class="service-list">
+            <li>QC Engineers & Inspectors                 </li>
+            <li>Piping, Pipeline & Mechanical Engineers   </li>
+            <li>NDT Technicians, Inspectors & Supervisors </li>
+            <li>Safety Officers & HSE Professionals       </li>
+            <li>Supervisors, Foremen & Skilled Tradesmen  </li>
+            <li>Welders, Fitters, Riggers & Support Staff </li>
+        </ul>
+    </div>
+</div>
+<div id="ndttrainig" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('ndttrainig')">&times;</span>
+
+        <h2>Training & Skill Development (FCES Institute)</h2>
+
+        <p>
+            FCES Institute of NDT & Inspection Technology delivers industry-focused training programs combining theory, 
+            practical labs, live projects, and industrial exposure.
+        </p>
+
+        <h3>Training Programs Include:</h3>
+
+        <ul class="service-list">
+            <li>NDT Level II (UT, RT, DPT, MPT, VT, ECT)  </li>
+            <li>QA/QC Mechanical Certification            </li>
+            <li>Oil & Gas Industry Courses                </li>
+            <li>CSWIP, AWS, NACE, PCN Preparatory Courses </li>
+            <li>Safety & HSE Training (NEBOSH, ISEI, HSE) </li>
+            <li>Quantity Surveying                        </li>
+
+        </ul>
+    </div>
+</div>
+@* <section class="courses-band">
+    <div class="overlay">
+        <div class="container">
+            <h2 class="band-title">Our Top Course</h2>
+            <div class="course-cards">
+                <div class="course-card">
+                    <img src="~/image/non-destructive testing.png" alt="course1" />
+                    <div class="course-title">Non-Destructive Testing (NDT) & Inspection</div>
+                </div>
+                <div class="course-card">
+                    <img src="~/images/course2.jpg" alt="course2" />
+                    <div class="course-title">Structural Engineer</div>
+                </div>
+                <div class="course-card">
+                    <img src="~/images/course3.jpg" alt="course3" />
+                    <div class="course-title">Hydrotest Engineer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />

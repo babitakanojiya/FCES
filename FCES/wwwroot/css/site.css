@@ -1,0 +1,593 @@
+﻿/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+:root {
+    --primary: #0a66c2;
+    --dark: #03181a;
+    --accent: #ffcc00;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 60px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+    background-color: #C13D63;
+    color: white;
+    padding: 10px 0;
+    border-bottom: 4px solid #000;
+}
+
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.header-left img {
+    height: 60px;
+}
+
+.header-center h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header-right {
+    font-size: 14px;
+    text-align: right;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+.navbar {
+    background: #fff;
+    border-bottom: 2px solid var(--primary);
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+    .nav-list a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 600;
+        padding: 8px 10px;
+        transition: 0.3s;
+    }
+
+        .nav-list a:hover,
+        .nav-list a.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+    .slide.active {
+        opacity: 1;
+    }
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 600px;
+}
+
+    .overlay-content h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .overlay-content p {
+        margin-bottom: 20px;
+    }
+
+.hero-btn {
+    padding: 12px 28px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .hero-btn:hover {
+        background: #004a99;
+    }
+
+/* ============================= */
+/* STATS SECTION */
+/* ============================= */
+
+.stats {
+    width: 100%;
+}
+
+.stats-cards {
+    display: flex;
+    width: 100%;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 30px;
+    background: linear-gradient(to right, #001f1f, #003333);
+    color: #fff;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stat-sub {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* ============================= */
+/* PREMIUM ABOUT SECTION */
+/* ============================= */
+
+.premium-about {
+    padding: 80px 0;
+    background: #f8f9fc;
+}
+
+.dark-section {
+    background: linear-gradient(135deg, #0a2a66, #163d8f);
+    color: #fff;
+}
+
+.about-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+    .about-content h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .about-content p {
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .about-content ul {
+        list-style: none;
+        margin-top: 20px;
+    }
+
+        .about-content ul li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+            .about-content ul li i {
+                color: var(--accent);
+                margin-right: 8px;
+            }
+
+.about-image {
+    flex: 1;
+}
+
+    .about-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        transition: 0.4s;
+    }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+.premium-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .premium-btn:hover {
+        background: #fff;
+        color: #0a2a66;
+    }
+
+/* ============================= */
+/* COURSES SECTION */
+/* ============================= */
+.courses-band {
+    background: linear-gradient(135deg,#0a66c2,#03181a);
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+}
+
+.band-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/*.course-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    
+}*/
+.course-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* keeps cards in one row */
+    width: 100%;
+}
+
+.course-card {
+    flex: 1; /* all cards take equal width */
+    min-width: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all .4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+    .course-card img {
+        width: 100%;
+        height: 245px;
+        object-fit: cover;
+        transition: transform .5s;
+    }
+
+    .course-card:hover {
+        transform: translateY(-10px) scale(1.03);
+    }
+
+        .course-card:hover img {
+            transform: scale(1.1);
+        }
+
+.course-title {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    animation: fadeIn .4s;
+}
+
+.modal-content {
+    background: white;
+    width: 700px;
+    max-width: 90%;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 12px;
+    animation: slideUp .4s ease;
+}
+
+    .modal-content h2 {
+        color: #0a66c2;
+        margin-bottom: 15px;
+    }
+
+    .modal-content h3 {
+        margin-top: 20px;
+        color: #03181a;
+    }
+
+.service-list {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* animations */
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* ============================= */
+/* RESPONSIVE COURSE CARDS */
+/* ============================= */
+
+/* Desktop - 4 cards in one row */
+.course-card {
+    width: calc(25% - 22px);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .course-card {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .course-card {
+        width: 100%;
+    }
+
+   /* .course-cards {
+        gap: 20px;
+    }*/
+    .course-cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.site-footer {
+    background: var(--dark);
+    color: #ccc;
+    padding: 16px 0;
+    text-align: center;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+    .course-cards {
+        flex-wrap: wrap;
+    }
+
+    .course-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 576px) {
+    .course-card {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .overlay-content {
+        left: 5%;
+        right: 5%;
+        text-align: center;
+    }
+
+        .overlay-content h1 {
+            font-size: 2rem;
+        }
+
+    .stat-card {
+        flex: 0 0 100%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* ============================= */
+/* DROPDOWN MENU */
+/* ============================= */
+
+/* Make parent relative */
+.nav-list > li {
+    position: relative;
+}
+
+/* Dropdown container */
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    min-width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.35s ease;
+    z-index: 999;
+}
+
+    /* Dropdown items */
+    .dropdown-menu li {
+        width: 100%;
+    }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 12px 20px;
+            font-weight: 500;
+            color: #222;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            /* Hover effect */
+            .dropdown-menu li a:hover {
+                background: #f2f6ff;
+                color: var(--primary);
+                padding-left: 25px;
+            }
+
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Arrow rotation effect */
+.dropdown > a {
+    transition: 0.3s ease;
+}
+
+.dropdown:hover > a {
+    color: var(--primary);
+}
+
+/* ============================= */
+/* MOBILE DROPDOWN FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border-radius: 0;
+        display: none;
+        background: #f9f9f9;
+    }
+
+    .dropdown.active > .dropdown-menu {
+        display: block;
+    }
+}

@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Babita\\new application for bro\\FCES data\\FCES\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\wwwroot\\css\\aboutus.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\wwwroot\\css\\aboutus.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\views\\aboutus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\views\\aboutus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\controllers\\offlineclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\controllers\\offlineclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|f:\\babita\\new application for bro\\fces data\\fces\\fces\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F05B40E0-1D48-47A7-834B-E614EF57048B}|FCES\\FCES.csproj|solutionrelative:fces\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "aboutus.css",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\wwwroot\\css\\aboutus.css",
+              "RelativeDocumentMoniker": "FCES\\wwwroot\\css\\aboutus.css",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\wwwroot\\css\\aboutus.css",
+              "RelativeToolTip": "FCES\\wwwroot\\css\\aboutus.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-06T02:43:32.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Aboutus\\Index.cshtml",
+              "RelativeDocumentMoniker": "FCES\\Views\\Aboutus\\Index.cshtml",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Aboutus\\Index.cshtml",
+              "RelativeToolTip": "FCES\\Views\\Aboutus\\Index.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAmwMMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-06T02:36:17.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Offlineclass.cs",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Controllers\\Offlineclass.cs",
+              "RelativeDocumentMoniker": "FCES\\Controllers\\Offlineclass.cs",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Controllers\\Offlineclass.cs",
+              "RelativeToolTip": "FCES\\Controllers\\Offlineclass.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T02:31:32.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "FCES\\wwwroot\\css\\site.css",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "FCES\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-22T11:43:06.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FCES\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FCES\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAWwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T14:44:36.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FCES\\Views\\Home\\Index.cshtml",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "FCES\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAmwJ4AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T14:44:12.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "FCES\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "FCES\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T14:44:10.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Program.cs",
+              "RelativeDocumentMoniker": "FCES\\Program.cs",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Program.cs",
+              "RelativeToolTip": "FCES\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAawB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T14:43:38.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "FCES\\Views\\_ViewStart.cshtml",
+              "ToolTip": "F:\\Babita\\new application for bro\\FCES data\\FCES\\FCES\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "FCES\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T14:43:25.904Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
