@@ -1,0 +1,238 @@
+﻿@{
+    ViewData["Title"] = "Our Mission and Our Vision";
+}
+
+<style>
+
+    /* HERO SECTION */
+    .hero-section {
+        width: 100%;
+        height: 400px;
+        background-image: url('/image/missionand vission.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+
+    .hero-title {
+        position: relative;
+        color: #fff;
+        font-size: 48px;
+        font-weight: 700;
+        z-index: 2;
+        letter-spacing: 1px;
+    }
+
+    /* MAIN SECTION */
+    .mission-section {
+        padding: 70px 20px;
+    }
+
+    /* GRID */
+    .mission-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    /* IMAGE CARD */
+    .image-card {
+        position: relative;
+        height: 330px;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        /* IMAGE OVERLAY */
+        .image-card::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(10,102,194,0.55);
+        }
+
+    /* OVERLAY TEXT */
+    .image-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        z-index: 2;
+        letter-spacing: 1px;
+    }
+
+    /* TEXT BOX */
+    .text-box {
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 12px;
+        border-left: 6px solid #0a66c2;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        font-size: 18px;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    /* HOVER EFFECT */
+    .image-card:hover img {
+        transform: scale(1.1);
+    }
+
+    /* ---------------- ANIMATION ---------------- */
+
+    /* INITIAL STATE */
+    .animate-left,
+    .animate-right {
+        opacity: 0;
+        transition: all 0.9s ease;
+    }
+
+    .animate-left {
+        transform: translateX(-80px);
+    }
+
+    .animate-right {
+        transform: translateX(80px);
+    }
+
+    /* ACTIVE STATE */
+    .show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* MOBILE */
+    @@media(max-width:768px) {
+
+        .hero-title {
+            font-size: 32px;
+        }
+
+        .mission-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+
+<!-- HERO BANNER -->
+<div class="hero-section">
+    <h1 class="hero-title">Our Mission & Vision</h1>
+</div>
+
+
+<!-- MISSION -->
+<section class="mission-section">
+
+    <div class="mission-grid">
+
+        <div class="image-card animate-left">
+            <img src="/image/mission.jpg" alt="Mission">
+            <div class="image-text">Our Mission</div>
+        </div>
+
+        <div class="text-box animate-right">
+
+            <p>
+                To deliver highly skilled professionals and reliable inspection services through
+                innovation, practical learning, and strong industry alignment.
+            </p>
+
+            <p>
+                We focus on building competent engineers and technicians equipped with real-world
+                knowledge in Non-Destructive Testing (NDT), Quality Assurance, and industrial
+                inspection services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- VISION -->
+<section class="mission-section">
+
+    <div class="mission-grid">
+
+        <div class="text-box animate-left">
+
+            <p>
+                To become a Centre of Excellence shaping future leaders in NDT,
+                Quality Control, Safety Engineering, and Oil & Gas industries.
+            </p>
+
+            <p>
+                Our vision is to empower professionals through advanced training,
+                industry partnerships, and cutting-edge technologies that meet
+                global industrial standards.
+            </p>
+
+        </div>
+
+        <div class="image-card animate-right">
+            <img src="/image/our vision.jpg" alt="Vision">
+            <div class="image-text">Our Vision</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+    /* SCROLL ANIMATION */
+
+    const elements = document.querySelectorAll('.animate-left, .animate-right');
+
+    function revealOnScroll(){
+
+        elements.forEach(el => {
+
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 120;
+
+            if(elementTop < windowHeight - revealPoint){
+                el.classList.add("show");
+            }
+
+        });
+
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+
+</script>

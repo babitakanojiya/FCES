@@ -34,7 +34,8 @@
     <div class="about-container">
 
         <div class="about-image">
-            <img src="~/image/aboutasbody.jpg" alt="About FCES">
+            
+            <img src="~/image/about us body.jpg" alt="About FCES">
         </div>
 
         <div class="about-text">
@@ -72,8 +73,8 @@
     <h2 class="section-title">Our Vision & Mission</h2>
 
     <div class="mvo-container">
-
-        <div class="mvo-card">
+        
+        <div class="mvo-card" onclick="location.href='@Url.Action("Index","missionandvission")'">
             <i class="fa-solid fa-bullseye"></i>
             <h3>Mission</h3>
 
@@ -84,7 +85,8 @@
             </p>
         </div>
 
-        <div class="mvo-card">
+
+        <div class="mvo-card" onclick="location.href='@Url.Action("Index","missionandvission")'">
             <i class="fa-solid fa-eye"></i>
             <h3>Vision</h3>
 
@@ -149,11 +151,96 @@
 
 </section>
 
+<section class="learning-section">
 
+    <h2 class="section-title">Learning at FCES</h2>
+
+    <div class="learning-grid">
+
+        <div class="learning-card">
+            <h3>Career Guidance</h3>
+            <p>
+                Our placement cell helps students connect with
+                future employers and build successful careers.
+            </p>
+
+            <p class="extra-text">
+                Our Training and Placement cell is a highly focused and committed unit providing
+                students with guidance in their career choices and access to future employers.
+            </p>
+        </div>
+
+        <div class="learning-card">
+            <h3>Oil & Gas Industry</h3>
+            <p>
+                Training covering exploration, drilling,
+                production and reservoir engineering.
+            </p>
+
+            <p class="extra-text">
+                This course is designed for candidates who intend to enter or enhance their career prospects in the Oil or Natural Gas industries. This course explores the geology, exploration, drilling, production, reservoir engineering and management, distribution and transmission of oil and gas from practical and theoretical viewpoints.
+            </p>
+        </div>
+
+        <div class="learning-card">
+            <h3>Non-Destructive Testing</h3>
+            <p>
+                Inspection method to test materials without
+                damaging the component.
+            </p>
+
+            <div class="extra-text">
+                <ul>
+                    <li>Non Destructive Testing (NDT) is a non-invasive method and the testing is carried out without impairing the further usefulness of the material, component and structure.</li>
+
+                    <li>The component can be put into use after the testing. The signals that are employed do not alter the properties of the material permanently.</li>
+
+                    <li>FCES Institute of NDT and Inspection Technology’s NDT Training and Testing Centre provides student-focused education that integrates the best of theory and practical application.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="learning-card">
+            <h3>Quality Assurance / Quality Control</h3>
+            <p>
+                QA ensures process quality while QC ensures
+                the product meets required standards.
+            </p>
+
+            <div class="extra-text">
+                <ul>
+                    <li>Every primary, Secondary and tertiary process industries there will be a department to impart quality and it is called QA/QC Section.</li>
+                    <li>Quality means fitness of a product.</li>
+                    <li>To achieve quality step by step instructions given during the product development is termed as Quality assurance and applying the control limits to make the product as a fit one is termed as Quality Control.</li>
+                    <li>Every industry is should follow certain codes, Standards, Specifications to achieve quality.</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="learning-card">
+            <h3>According to SNTC 1A</h3>
+            <p>
+                Society for Non Destructive Testing Committee First Amendment.
+            </p>
+
+            <div class="extra-text">
+                <ul>
+                    <li>It is a document related to training certification and experiments required for the certification purpose of Level 1, 2 and 3.</li>
+                    <li>This documents provides guidelines for the establishment of a qualification and certification program.</li>
+                    <li>This guideline has been developed by American Society for Non Destructive Testing to aid employers in recognizing the essential factor to be considered in qualifying personal engaged in any NDT Method.</li>
+                    
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- LEARNING -->
 
-<section class="learning-section">
+@* <section class="learning-section">
 
     <h2 class="section-title">Learning at FCES</h2>
 
@@ -193,4 +280,4 @@
 
     </div>
 
-</section>
+</section> *@

@@ -1,8 +1,9 @@
 ﻿/* HERO */
 
 .hero-section {
-    height: 420px;
-    background-image: url('/image/aboutus.jpg');
+    height: 500px;
+    background-image: url('/image/about us new.jpg');
+    /*background-image: url('../image/about us new.jpg');*/
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -167,7 +168,7 @@
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
 }
-
+/*
 .learning-card {
     background: white;
     padding: 30px;
@@ -179,8 +180,42 @@
     .learning-card:hover {
         transform: translateY(-5px);
     }
+*/
+.learning-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.1);
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
 
+    .learning-card:hover {
+        transform: translateY(-5px);
+    }
 
+/* Hidden text */
+.extra-text {
+    display: none;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Show on hover */
+.learning-card:hover .extra-text {
+    display: block;
+}
+.extra-text ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.extra-text li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
 /* ANIMATION */
 
 @keyframes fadeUp {

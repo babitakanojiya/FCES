@@ -27,29 +27,129 @@
         </div>
     </header>
     <header>
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a asp-controller="Home" asp-action="Index" class="active">HOME</a></li>
-                    <li><a asp-controller="AboutUs" asp-action="Index" >About Us</a></li>
-                    
+        @{
+            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+        }
 
-                <li class="dropdown">
-                        <a href="#">COURSES & CERTIFICATIONS ▼</a>
-                    <ul class="dropdown-menu">
-                            <li><a asp-controller="Offlineclass" asp-action="Index">Off line (Classroom) Certification Programs</a></li>
-                            <li><a asp-controller="PaidOnlineclass" asp-action="Index">Paid Online Courses (e-Learning)</a></li>
-                        @* <li><a asp-controller="Courses" asp-action="HVAC">HVAC</a></li> *@
-                    </ul>
-                </li>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-list">
 
-                <li><a asp-controller="Jobs" asp-action="Index">JOB OPENINGS</a></li>
-                <li><a asp-controller="Gallery" asp-action="Index">GALLERY</a></li>
-                    <li><a asp-controller="Blogvideo" asp-action="Index">BLOGS</a></li>
-                <li><a asp-controller="Contact" asp-action="Index">CONTACT</a></li>
-            </ul>
-        </div>
-    </nav>
+                    <li>
+                        <a asp-controller="Home" asp-action="Index"
+                           class="@(currentController == "Home" ? "active" : "")">
+                            HOME
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="@((currentController == "AboutUs" || currentController == "missionandvission") ? "active" : "")">
+                            About Us ▼
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-controller="AboutUs" asp-action="Index"
+                                   class="@(currentController == "AboutUs" ? "active" : "")">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="missionandvission" asp-action="Index"
+                                   class="@(currentController == "missionandvission" ? "active" : "")">
+                                    Our Mission & Our Vision
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="@((currentController == "trainingandcertification" || currentController == "nondestruction" || currentController=="thirdpartmechanical" || currentController=="manpowersupply") ? "active" : "")">
+                            Services ▼
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-controller="trainingandcertification" asp-action="Index"
+                                   class="@(currentController == "trainingandcertification" ? "active" : "")">
+                                    Training and certification
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="nondestruction" asp-action="Index"
+                                   class="@(currentController == "nondestruction" ? "active" : "")">
+                                    Non-Destructive Testing & Inspection Services
+                                </a>
+                            </li>
+                             <li>
+                                <a asp-controller="thirdpartmechanical" asp-action="Index"
+                                   class="@(currentController == "thirdpartmechanical" ? "active" : "")">
+                                    Third-Party Mechanical Inspection Services
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="manpowersupply" asp-action="Index"
+                                   class="@(currentController == "manpowersupply" ? "active" : "")">
+                                    Manpower Supply Services
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="@((currentController == "Offlineclass" || currentController == "PaidOnlineclass") ? "active" : "")">
+                            COURSES & CERTIFICATIONS ▼
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-controller="Offlineclass" asp-action="Index"
+                                   class="@(currentController == "Offlineclass" ? "active" : "")">
+                                    Off line (Classroom) Certification Programs
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="PaidOnlineclass" asp-action="Index"
+                                   class="@(currentController == "PaidOnlineclass" ? "active" : "")">
+                                    Paid Online Courses (e-Learning)
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Jobs" asp-action="Index"
+                           class="@(currentController == "Jobs" ? "active" : "")">
+                            JOB OPENINGS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Gallery" asp-action="Index"
+                           class="@(currentController == "Gallery" ? "active" : "")">
+                            GALLERY
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Blogvideo" asp-action="Index"
+                           class="@(currentController == "Blogvideo" ? "active" : "")">
+                            BLOGS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Contact" asp-action="Index"
+                           class="@(currentController == "Contact" ? "active" : "")">
+                            CONTACT
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
 </header>
 
 <hr />

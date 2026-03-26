@@ -1,7 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
+<script>
+    document.querySelector('.premium-btn').addEventListener('click', function(e) {
+        e.preventDefault();
 
+        const target = document.querySelector('#courses');
+
+        window.scrollTo({
+            top: target.offsetTop - 20,
+            behavior: 'smooth'
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const slides = document.querySelectorAll(".slide");
@@ -109,7 +120,7 @@
                     <li><i class="fa fa-check-circle"></i> Skilled Manpower Supply</li>
                 </ul>
 
-                <a href="#" class="premium-btn">Explore Services</a>
+                <a href="#courses" class="premium-btn">Explore Services</a>
             </div>
 
         </div>
@@ -177,7 +188,7 @@
 
     
 </section>
-<section class="courses-band">
+<section class="courses-band" id="courses">
     <div class="overlay">
         <div class="container">
             <h2 class="band-title">Our Core Services</h2>
@@ -311,25 +322,94 @@
         </ul>
     </div>
 </div>
-@* <section class="courses-band">
-    <div class="overlay">
-        <div class="container">
-            <h2 class="band-title">Our Top Course</h2>
-            <div class="course-cards">
-                <div class="course-card">
-                    <img src="~/image/non-destructive testing.png" alt="course1" />
-                    <div class="course-title">Non-Destructive Testing (NDT) & Inspection</div>
-                </div>
-                <div class="course-card">
-                    <img src="~/images/course2.jpg" alt="course2" />
-                    <div class="course-title">Structural Engineer</div>
-                </div>
-                <div class="course-card">
-                    <img src="~/images/course3.jpg" alt="course3" />
-                    <div class="course-title">Hydrotest Engineer</div>
-                </div>
-            </div>
-        </div>
+<section class="services-section">
+
+    <div class="services-header">
+        <h2>Our Services</h2>
+        <span class="title-line"></span>
     </div>
-</section> *@
+
+    <div class="services-slider">
+
+        <div class="services-track">
+
+            <div class="service-card">
+                <img src="~/image/training and certification.jpg" alt="Training">
+                <h3>Training and Certification</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/non-destructive testing & inspection services.jpg" alt="NDT">
+                <h3>Non-Destructive Testing & Inspection</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/third-party mechanical inspection services.jpg" alt="Mechanical">
+                <h3>Third-Party Mechanical Inspection</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/manpower supply services.jpg" alt="Manpower">
+                <h3>Manpower Supply Services</h3>
+            </div>
+
+            <!-- duplicate cards for infinite effect -->
+
+            <div class="service-card">
+                <img src="~/image/training and certification.jpg" alt="Training">
+                <h3>Training and Certification</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/non-destructive testing & inspection services.jpg" alt="NDT">
+                <h3>Non-Destructive Testing & Inspection</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/third-party mechanical inspection services.jpg" alt="Mechanical">
+                <h3>Third-Party Mechanical Inspection</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="~/image/manpower supply services.jpg" alt="Manpower">
+                <h3>Manpower Supply Services</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+@* <section class="services-section">
+
+    <h2 class="services-title">Our Services</h2>
+
+    <div class="services-slider">
+
+        <div class="service-card">
+            <img src="~/image/training and certification.jpg" alt="Training" />
+            <h3>Training and Certification</h3>
+        </div>
+
+        <div class="service-card">
+            <img src="~/image/non-destructive testing & inspection services.jpg" alt="NDT" />
+            <h3>Non-Destructive Testing & Inspection</h3>
+        </div>
+
+        <div class="service-card">
+            <img src="~/image/third-party mechanical inspection services.jpg" alt="Mechanical" />
+            <h3>Third-Party Mechanical Inspection</h3>
+        </div>
+
+        <div class="service-card">
+            
+            <img src="~/image/manpower supply services.jpg" alt="Manpower" />
+            <h3>Manpower Supply Services</h3>
+        </div>
+
+    </div>
+
+</section>
+ *@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
