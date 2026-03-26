@@ -1,0 +1,461 @@
+﻿body {
+    font-family: Segoe UI;
+    margin: 0;
+}
+
+/* HERO */
+
+.ndt-hero {
+    height: 420px;
+    background-image: url('/image/non-destructive testing add in hedder.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.ndt-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.ndt-hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+}
+
+    .ndt-hero-content h1 {
+        font-size: 46px;
+        margin-bottom: 15px;
+    }
+
+    .ndt-hero-content p {
+        font-size: 20px;
+    }
+
+
+/* CONTAINER */
+
+.ndt-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+
+/* INTRO GRID */
+
+.ndt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.ndt-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+
+/* INDUSTRY GRID */
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+}
+
+.industry-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    transition: 0.4s;
+}
+
+    .industry-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 15px;
+    }
+
+    .industry-card:hover {
+        transform: translateY(-8px);
+    }
+
+
+/* BENEFITS */
+
+.ndt-benefits {
+    background: #0f172a;
+    color: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.benefit-box {
+    background: #1e293b;
+    padding: 18px;
+    border-left: 4px solid #f59e0b;
+}
+
+
+/* METHODS */
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.method-card {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: .3s;
+}
+
+    .method-card:hover {
+        background: #0f172a;
+        color: white;
+    }
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px) {
+
+    .ndt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ndt-hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+/* ===============================
+   INDUSTRY SECTION ENHANCEMENT
+   =============================== */
+
+.industry-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+    .industry-card h3 span {
+        display: block;
+        font-size: 13px;
+        color: #64748b;
+        margin-top: 3px;
+    }
+
+.industry-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.industry-card ul {
+    padding-left: 18px;
+    margin: 12px 0;
+}
+
+    .industry-card ul li {
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #334155;
+        position: relative;
+    }
+
+        /* Stylish bullet */
+        .industry-card ul li::marker {
+            color: #f59e0b;
+            font-size: 16px;
+        }
+
+/* Highlight text */
+.industry-card .highlight {
+    font-weight: 500;
+    color: #0f172a;
+}
+
+/* Top gradient border animation */
+.industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    transition: width 0.4s ease;
+}
+
+.industry-card:hover::before {
+    width: 100%;
+}
+
+/* Smooth hover zoom image */
+.industry-card img {
+    transition: transform 0.4s ease;
+}
+
+.industry-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card hover enhancement */
+.industry-card:hover {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   OPTIONAL FADE ANIMATION
+   =============================== */
+
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+    [data-aos].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+/* ===============================
+   ICON BASED LIST (REPLACE BULLETS)
+   =============================== */
+
+.industry-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .industry-card ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #334155;
+        position: relative;
+    }
+
+        /* Default icon */
+        .industry-card ul li::before {
+            content: "\f058"; /* check-circle */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #f59e0b;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+/* ===============================
+   CARD SPLIT EFFECT (VISUAL 2 PART)
+   =============================== */
+
+.industry-card {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+    /* Image = Top part */
+    .industry-card img {
+        border-radius: 0;
+        height: 180px;
+    }
+
+    /* Content spacing = Bottom part */
+    .industry-card h3,
+    .industry-card p,
+    .industry-card ul {
+        padding: 0 20px;
+    }
+
+    .industry-card h3 {
+        margin-top: 15px;
+    }
+
+    /* Bottom spacing */
+    .industry-card p:last-child {
+        padding-bottom: 20px;
+    }
+
+    /* ===============================
+   IMAGE OVERLAY (MODERN LOOK)
+   =============================== */
+
+    .industry-card img {
+        position: relative;
+    }
+
+    .industry-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 180px;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        pointer-events: none;
+    }
+
+/* ===============================
+   HOVER EFFECT UPGRADE
+   =============================== */
+
+.industry-card {
+    transition: all 0.4s ease;
+}
+
+    .industry-card:hover {
+        transform: translateY(-12px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    /* ===============================
+   TITLE ENHANCEMENT
+   =============================== */
+
+    .industry-card h3 {
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    /* ===============================
+   SMOOTH TEXT FADE-IN
+   =============================== */
+
+    .industry-card p,
+    .industry-card ul {
+        transition: 0.3s ease;
+    }
+
+    .industry-card:hover p,
+    .industry-card:hover ul {
+        transform: translateY(-2px);
+    }
+
+/* ===============================
+   CARD BASED NDT SECTION
+   =============================== */
+
+.ndt-choose-card {
+    background: #f8fafc;
+}
+
+/* GRID */
+.choose-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.choose-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Hover */
+    .choose-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+    }
+
+    /* Top border accent */
+    .choose-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    /* Title */
+    .choose-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #0f172a;
+    }
+
+    /* Text */
+    .choose-card p {
+        font-size: 14px;
+        color: #475569;
+        line-height: 1.6;
+    }
+
+    /* Highlight */
+    .choose-card .highlight {
+        font-weight: 500;
+        color: #0f172a;
+    }
+
+/* ICON LIST (reuse your existing if already added) */
+.icon-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+    .icon-list li {
+        position: relative;
+        padding-left: 22px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+        /* Icon */
+        .icon-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #f59e0b;
+        }
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .choose-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
