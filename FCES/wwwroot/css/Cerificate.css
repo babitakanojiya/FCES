@@ -1,0 +1,28 @@
+﻿/* HERO SECTION */
+.hero-section {
+    width: 100%;
+    height: 400px;
+    background-image: url('/image/certificate verification.jfif');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+    }
+
+.hero-title {
+    position: relative;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    z-index: 2;
+}
