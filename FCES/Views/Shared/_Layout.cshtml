@@ -98,7 +98,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="@((currentController == "Offlineclass" || currentController == "PaidOnlineclass") ? "active" : "")">
+                        <a href="#" class="@((currentController == "Offlineclass" || currentController == "PaidOnlineclass" || currentController=="Certificate_Verification") ? "active" : "")">
                             COURSES & CERTIFICATIONS ▼
                         </a>
 
@@ -116,13 +116,21 @@
                                     Paid Online Courses (e-Learning)
                                 </a>
                             </li>
+                            <li>
+                                <a asp-controller="Certificate_Verification" asp-action="Index"
+                                   class="@(currentController == "Certificate_Verification" ? "active" : "")">
+                                    Certificate Verification
+                                </a>
+                            </li>
+
+                            
                         </ul>
                     </li>
 
                     <li>
-                        <a asp-controller="Jobs" asp-action="Index"
-                           class="@(currentController == "Jobs" ? "active" : "")">
-                            JOB OPENINGS
+                        <a asp-controller="Placement" asp-action="Index"
+                           class="@(currentController == "Placement" ? "active" : "")">
+                            Placement
                         </a>
                     </li>
 
