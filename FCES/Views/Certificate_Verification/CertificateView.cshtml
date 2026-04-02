@@ -1,0 +1,48 @@
+﻿@model FCES.Models.Certificate_Verification
+
+<link href="~/css/certificate.css" rel="stylesheet" />
+
+<div class="certificate-container">
+
+    <div class="certificate">
+
+        <h1 class="title">FOURM CONSULTING ENGINEERS</h1>
+        <h3 class="sub-title">Certificate</h3>
+
+        <div class="row">
+            <span>Certificate No: <b>@Model.CertificateNo</b></span>
+            <span>Issue Date: 16/01/2018</span>
+        </div>
+
+        <p class="center-text">This is to certify that</p>
+
+        <h2 class="name">@Model.Name</h2>
+
+        <p class="center-text">
+            has successfully completed certification
+        </p>
+
+        <p><b>Method:</b> @Model.Method</p>
+        <p><b>Level:</b> @Model.Level</p>
+
+        <!-- TABLE -->
+        <table class="result-table">
+            <tr><th>Type</th><th>Marks</th></tr>
+            <tr><td>General</td><td>@Model.GeneralMarks</td></tr>
+            <tr><td>Specific</td><td>@Model.SpecificMarks</td></tr>
+            <tr><td>Practical</td><td>@Model.PracticalMarks</td></tr>
+            <tr><td>Total</td><td>@Model.Total</td></tr>
+            <tr><td>Percentage</td><td>@Model.Percentage %</td></tr>
+        </table>
+
+        <!-- IMAGE -->
+        <div class="photo">
+            <img src="@Model.ImagePath" />
+        </div>
+
+        <p class="footer-text">
+            Certificate valid for 5 years
+        </p>
+
+    </div>
+</div>
