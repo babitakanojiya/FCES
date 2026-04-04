@@ -9,6 +9,6 @@ namespace FCES.Data
         {
         }
 
-        public DbSet<Certificate_Verification> Certificates { get; set; }
+        public DbSet<Certificates> Certificates { get; set; }
     }
 }
