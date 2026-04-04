@@ -1,48 +1,181 @@
-﻿@model FCES.Models.Certificate_Verification
+﻿@model FCES.Models.Certificates
 
-<link href="~/css/certificate.css" rel="stylesheet" />
+<link href="~/css/allcertificate.css" rel="stylesheet" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    // PRINT
+    function printCertificate() {
+        window.print();
+    }
+
+    // PDF DOWNLOAD
+            async function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+
+        const element = document.querySelector(".certificate-container");
+
+        const canvas = await html2canvas(element, {
+            scale: 2,   // ULTRA QUALITY
+            useCORS: true,
+            scrollY: -window.scrollY
+        });
+
+        const imgData = canvas.toDataURL("image/jpeg", 0.7); // 0.7 = compression
+
+        const pdf = new jsPDF('p', 'mm', 'a4');
+
+        pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
+
+        pdf.save("Certificate_A4.pdf");
+    }
+    // QR CODE GENERATE
+        window.onload = function () {
+
+        var qrText = window.location.origin + "/Certificate/Download/@Model.CertificateNo";
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: qrText,
+            width: 80,
+            height: 80
+        });
+    };
+</script>
+
+<div class="actions">
+    <button onclick="printCertificate()">🖨 Print</button>
+    <button onclick="downloadPDF()">⬇ Download PDF</button>
+</div>
 <div class="certificate-container">
 
-    <div class="certificate">
+    <!-- HEADER -->
+    <div class="header premium-header">
+        <img src="~/image/logo.jpeg" class="logo" />
 
-        <h1 class="title">FOURM CONSULTING ENGINEERS</h1>
-        <h3 class="sub-title">Certificate</h3>
-
-        <div class="row">
-            <span>Certificate No: <b>@Model.CertificateNo</b></span>
-            <span>Issue Date: 16/01/2018</span>
+        <div class="title">
+            <h1>FOURM CONSULTING ENGINEERS</h1>
+            <div class="divider"></div>
+            <p>SCHOOL OF NDT, WELDING, PAINTING</p>
+            <p>Plot No. 32, Sector-1A, Koparkhairane, Navi Mumbai - 400709</p>
+            <p>📞 2754 2085 | ✉ nanireddy12@yahoo.com</p>
         </div>
+    </div>
+    <h2 class="cert-title">Certificate</h2>
 
-        <p class="center-text">This is to certify that</p>
+    <!-- TOP DETAILS -->
+    <div class="top-row">
+        <span>Certificate No: <b>@Model.CertificateNo</b></span>
+        <span>Issue Date: <b>@Model.IssueDate.ToString("dd/MM/yyyy")</b></span>
+    </div>
 
-        <h2 class="name">@Model.Name</h2>
+    <!-- BODY -->
+    <div class="body-text">
+        <p class="center"><b>This is To Certify</b></p>
 
-        <p class="center-text">
-            has successfully completed certification
+        <p>Mr. <b>@Model.Name</b></p>
+        <p>Of <b>@Model.CompanyName</b></p>
+
+        <p>
+            has demonstrated his ability successfully in both written and practical examinations
+            in accordance with the ASNT written Practice Document No. SNT-TC-1A 2006 Edition.
         </p>
 
-        <p><b>Method:</b> @Model.Method</p>
-        <p><b>Level:</b> @Model.Level</p>
+        <p>Method: <b>@Model.Method</b></p>
+        <p>Level: <b>@Model.Level</b></p>
+    </div>
 
-        <!-- TABLE -->
-        <table class="result-table">
-            <tr><th>Type</th><th>Marks</th></tr>
-            <tr><td>General</td><td>@Model.GeneralMarks</td></tr>
-            <tr><td>Specific</td><td>@Model.SpecificMarks</td></tr>
-            <tr><td>Practical</td><td>@Model.PracticalMarks</td></tr>
-            <tr><td>Total</td><td>@Model.Total</td></tr>
-            <tr><td>Percentage</td><td>@Model.Percentage %</td></tr>
+    <!-- TABLE -->
+    <div class="table-section">
+        <table>
+            <tr>
+                <th>Results</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>General Examination</td>
+                <td>@Model.GeneralMarks</td>
+            </tr>
+            <tr>
+                <td>Specific Examination</td>
+                <td>@Model.SpecificMarks</td>
+            </tr>
+            <tr>
+                <td>Practical Examination</td>
+                <td>@Model.PracticalMarks</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>@Model.Total</td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td>@Model.Percentage %</td>
+            </tr>
+            <tr>
+                <td>Near Vision</td>
+                <td>@Model.NearVision</td>
+            </tr>
+            <tr>
+                <td>Colour Blindness</td>
+                <td>@Model.ColorBlindness</td>
+            </tr>
+            <tr>
+                <td>Training Hours</td>
+                <td>@Model.TrainingHours</td>
+            </tr>
         </table>
 
-        <!-- IMAGE -->
-        <div class="photo">
+        <!-- PHOTO -->
+        @* <div class="photo-box">
             <img src="@Model.ImagePath" />
+            <p>Examinee's Signature</p>
+        </div> *@
+        <div class="photo-box">
+            @* <img src="@Model.ImagePath" class="photo" /> *@
+            <img src="~/image/manpower supply services.jpg" class="photo" />
+            
+            
+
+            <!-- STAMP -->
+            <img src="~/image/certificate/signnew.jfif" class="sign" />
+            <img src="~/image/certificate/stamp.png" class="stamp" />
+
+            <!-- SIGNATURE -->
+            
+            
+            <p>Examinee's Signature</p>
+
+            <div id="qrcode" class="qr-box"></div>
         </div>
 
-        <p class="footer-text">
-            Certificate valid for 5 years
+        
+    </div>
+    
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="examiner-sign">
+            <img src="~/image/certificate/signnew.jfif" class="exam-sign-img" />
+            <p>Examiner's Signature</p>
+        </div>
+        @* <p>Examiner's Signature</p> *@
+        <p class="validity">
+            The Certificate issued is valid for maximum of 5 years from the above date
+        </p>
+    </div>
+    @* <div class="footer">
+
+        <div class="examiner-sign">
+            <img src="~/image/certificate/signnew.jfif" class="exam-sign-img" />
+            <p>Examiner's Signature</p>
+        </div>
+
+        <p class="validity">
+            The Certificate issued is valid for maximum of 5 years from the above date
         </p>
 
-    </div>
+    </div> *@
+
 </div>
