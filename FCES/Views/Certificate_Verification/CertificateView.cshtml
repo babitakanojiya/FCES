@@ -45,9 +45,8 @@
     };
 </script>
 
-<div class="actions">
-    <button onclick="printCertificate()">🖨 Print</button>
-    <button onclick="downloadPDF()">⬇ Download PDF</button>
+<div class="bg-animation">
+    <span></span><span></span><span></span><span></span><span></span>
 </div>
 <div class="certificate-container">
 
@@ -66,11 +65,14 @@
     <h2 class="cert-title">Certificate</h2>
 
     <!-- TOP DETAILS -->
+    @* <div class="top-row">
+        <span>Certificate No: <b>@Model.CertificateNo</b></span>
+        <span>Issue Date: <b>@Model.IssueDate.ToString("dd/MM/yyyy")</b></span>
+    </div> *@
     <div class="top-row">
         <span>Certificate No: <b>@Model.CertificateNo</b></span>
         <span>Issue Date: <b>@Model.IssueDate.ToString("dd/MM/yyyy")</b></span>
     </div>
-
     <!-- BODY -->
     <div class="body-text">
         <p class="center"><b>This is To Certify</b></p>
@@ -178,4 +180,17 @@
 
     </div> *@
 
+</div>
+@* <div class="actions">
+    <button onclick="printCertificate()">🖨 Print</button>
+    <button onclick="downloadPDF()">⬇ Download PDF</button>
+</div> *@
+<div class="actions">
+    <button class="btn btn-print" onclick="printCertificate()">
+        🖨 Print
+    </button>
+
+    <button class="btn btn-download" onclick="downloadPDF()">
+        ⬇ Download PDF
+    </button>
 </div>

@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Registration";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="~/css/Registration.css" rel="stylesheet" />
+<script>
+    function closePopup() {
+        document.querySelector(".success-popup").style.display = "none";
+    }
+</script>
+<div class="register-container">
+
+    <h2>Register With Us</h2>
+    <p class="subtitle">
+        Stay ahead in your career. Register with us to receive timely job opportunities and professional certification support.
+    </p>
+
+    <form method="post" asp-action="Register" enctype="multipart/form-data">
+
+        
+        <div class="section">
+            <h3>👤 Personal Details</h3>
+
+            
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="FirstName" placeholder=" " required>
+                    <label>First Name</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="MiddleName" placeholder=" " />
+                    <label>Middle Name</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="LastName" placeholder=" " />
+                    <label>Last Name</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="Phone" required placeholder=" " />
+                    <label>Phone Number</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="Whatsapp" placeholder=" " />
+                    <label>WhatsApp Number</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="Email" placeholder=" " />
+                    <label>Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date" name="DOB" required  />
+                    <label>Date of Birth</label>
+                </div>
+
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h3>🎓 Course Details</h3>
+
+            <div class="form-grid">
+
+                <!-- COURSE MODE -->
+                <div class="form-group">
+                    <i class="fas fa-laptop"></i>
+                    <select name="CourseMode" required>
+                        <option value="" disabled selected hidden></option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                    </select>
+                    <label>Course Mode</label>
+                </div>
+
+                <!-- COURSE NAME -->
+                <div class="form-group">
+                    <i class="fas fa-book"></i>
+                    <select name="CourseName" required>
+                        <option value="" disabled selected hidden></option>
+                        <option>UT Level II</option>
+                        <option>RT Level II</option>
+                        <option>MT Level II</option>
+                        <option>PT Level II</option>
+                        <option>VT Level II</option>
+                    </select>
+                    <label>Course Name</label>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="form-group">
+                    <i class="fas fa-briefcase"></i>
+                    <select name="Experience" required>
+                        <option value="" disabled selected hidden></option>
+                        <option>0-1 Years</option>
+                        <option>1-3 Years</option>
+                        <option>3+ Years</option>
+                    </select>
+                    <label>Experience</label>
+                </div>
+
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h3>📁 Upload Documents</h3>
+
+            <div class="form-grid">
+
+                <!-- PHOTO -->
+                <div class="upload-box">
+                    <label>Upload Photo</label>
+                    <input type="file" name="Photo" accept="image/*" />
+                    <img id="photoPreview" class="preview" />
+                </div>
+
+                <!-- RESUME -->
+                <div class="upload-box">
+                    <label>Upload Resume</label>
+                    <input type="file" name="Resume" />
+                </div>
+
+                <!-- CERTIFICATE -->
+                <div class="upload-box">
+                    <label>Upload Certificate</label>
+                    <input type="file" name="Certificate" />
+                </div>
+
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h3>💬 Additional Info</h3>
+            <textarea name="Query" class="full-width" placeholder="Your Queries"></textarea>
+        </div>
+
+        <button type="submit" class="register-btn">Register Now</button>
+
+    </form>
+
+</div>
+@if (ViewBag.Success == true)
+{
+    <div class="success-popup">
+        <div class="popup-content">
+            <h2>✅ Registration Successful</h2>
+
+            <p>Your Registration Number:</p>
+            <h3>@ViewBag.RegNo</h3>
+
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+}
