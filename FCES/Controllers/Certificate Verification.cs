@@ -19,18 +19,22 @@ namespace FCES.Controllers
         }
 
         [HttpPost]
+       
         public IActionResult Verify(string certificateNo)
         {
+            ViewBag.HasSearched = true;
             var data = _context.Certificates
                 .FirstOrDefault(x => x.CertificateNo == certificateNo);
 
             if (data == null)
             {
-                ViewBag.Message = "Data not found, please register";
+                ViewBag.IsValid = false;
+                ViewBag.Message = "Certificate is not available. Please complete your course and register.";
                 return View("Index");
             }
 
-            return View("CertificateView", data);
+            ViewBag.IsValid = true;
+            return View("Index", data);
         }
     }
 }

@@ -285,3 +285,332 @@ th, td {
     font-size: 13px;
     margin-top: 5px;
 }
+/* CARD DESIGN */
+.notfound-card {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+    /* ICON */
+    .notfound-card .icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    /* TITLE */
+    .notfound-card h2 {
+        color: #d32f2f;
+        margin-bottom: 10px;
+    }
+
+    /* TEXT */
+    .notfound-card p {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+/* BUTTON */
+.register-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #b8960c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* BLINK EFFECT */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.register-btn {
+    animation: blink 1s infinite;
+}
+/* MAIN CARD */
+.verify-success-card {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* HEADER */
+.verify-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ICON */
+.verify-icon {
+    font-size: 50px;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* TITLE */
+.verify-header h2 {
+    color: #2e7d32;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+/* TEXT */
+.verify-header p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* BADGE */
+.verify-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 15px;
+    background: #2e7d32;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* CERTIFICATE BOX */
+.verify-certificate {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+.verify-success-card {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ACTION BUTTON CONTAINER */
+.actions {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* COMMON BUTTON STYLE */
+.btn {
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* PRINT BUTTON */
+.btn-print {
+    background: #2e7d32;
+}
+
+    .btn-print:hover {
+        background: #1b5e20;
+        transform: translateY(-2px);
+    }
+
+/* DOWNLOAD BUTTON */
+.btn-download {
+    background: #1565c0;
+}
+
+    .btn-download:hover {
+        background: #0d47a1;
+        transform: translateY(-2px);
+    }
+
+/* CLICK EFFECT */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* SHADOW EFFECT */
+/*.btn {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+    /* LEFT SIDE */
+    .top-row .left {
+        text-align: left;
+    }
+
+    /* RIGHT SIDE */
+    .top-row .right {
+        text-align: right;
+    }
+
+    /* OPTIONAL STYLE */
+    .top-row b {
+        font-weight: bold;
+    }
+.bg-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+    .bg-animation span {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(10,102,194,0.2);
+        animation: float 10s linear infinite;
+        bottom: -50px;
+        border-radius: 50%;
+    }
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(0);
+    }
+
+    100% {
+        transform: translateY(-1000px) scale(1);
+    }
+}
+
+/* MAIN SECTION */
+.verification-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* INFO CARD */
+.info-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+    /* HEADINGS */
+    .info-card h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+.sub-text {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* BLOCKS */
+.info-block {
+    margin-top: 20px;
+}
+
+    .info-block h3 {
+        color: #b8960c;
+        margin-bottom: 10px;
+    }
+
+    /* LIST */
+    .info-block ul {
+        padding-left: 20px;
+    }
+
+    .info-block li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+/* SEARCH CARD */
+.search-card {
+    text-align: center;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+    /* INPUT */
+    .search-card input {
+        padding: 12px;
+        width: 280px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    /* BUTTON */
+    .search-card button {
+        padding: 12px 20px;
+        background: #b8960c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .search-card button:hover {
+            background: #8c6f08;
+        }
+
+/* ERROR */
+.error-msg {
+    color: red;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .search-card input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-card button {
+        width: 100%;
+    }
+}

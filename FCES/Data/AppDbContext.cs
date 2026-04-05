@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using FCES.Models;
+using FCES.Controllers;
 
 namespace FCES.Data
 {
@@ -10,5 +11,6 @@ namespace FCES.Data
         }
 
         public DbSet<Certificates> Certificates { get; set; }
+        public DbSet<Registration> Registration { get; set; }
     }
 }

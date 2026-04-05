@@ -2,17 +2,115 @@
     ViewData["Title"] = "Certificate Verification";
 }
 <link href="~/css/allcertificate.css" rel="stylesheet" />
+@model FCES.Models.Certificates
+<script>
+    window.addEventListener("load", function () {
 
+        var hasSearched = @((ViewBag.HasSearched ?? false).ToString().ToLower());
 
+        if (hasSearched) {
+
+            setTimeout(function () {
+                var section = document.getElementById("result-section");
+
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }, 300);
+        }
+
+    });
+</script>
+<div class="bg-animation">
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- HERO -->
 <section class="tpi-hero">
     <div class="tpi-content" data-aos="fade-up">
-        <h1>Certificate Verification</h1>
-        
+        <h1></h1>
+        <p></p>
     </div>
 </section>
 
 <!-- SEARCH BOX -->
-<div style="text-align:center; margin-top:30px;">
+<div class="verification-section">
+
+    <!-- INFO CARD -->
+    <div class="info-card">
+
+        <h2>Certificate Generation & Verification <span>🔒</span></h2>
+
+        <p class="sub-text">
+            FCES prioritizes the integrity and security of your professional qualifications.
+            Our certification process is designed to be rigorous, transparent, and globally verifiable.
+        </p>
+
+        <div class="info-block">
+            <h3>Certificate Generation</h3>
+
+            <ul>
+                <li>
+                    <b>Adherence to Standards:</b>
+                    All FCES Level II Certificates are generated strictly in accordance with recognized industry standards such as ASNT SNT-TC-1A, subject to the employer's Written Practice.
+                </li>
+
+                <li>
+                    <b>Assessment:</b>
+                    Certification is awarded only upon successful completion of required training hours and examinations (General, Specific, and Practical).
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <h3>Quick & Reliable Verification</h3>
+
+            <ul>
+                <li>
+                    Secure digital database ensures authenticity of all certified professionals.
+                </li>
+
+                <li>
+                    <b>Online Verification Portal:</b>
+                    Instantly verify certificates using Certificate Number and Candidate Name.
+                </li>
+
+                <li>
+                    <b>Verification Support:</b>
+                    Dedicated email/phone support available for bulk or critical verification.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SEARCH CARD -->
+    <div class="search-card">
+
+        <h3>Verify Your Certificate</h3>
+
+        <form method="post" asp-action="Verify">
+            <input type="text" name="certificateNo"
+                   placeholder="Enter Certificate Number"
+                   required />
+
+            <button type="submit">
+                🔍 Verify
+            </button>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <p class="error-msg">@ViewBag.Message</p>
+        }
+
+    </div>
+
+</div>
+@* <div style="text-align:center; margin-top:30px;">
 
     <form method="post" asp-action="Verify">
         <input type="text" name="certificateNo"
@@ -31,4 +129,66 @@
         </p>
     }
 
+</div>
+ *@
+
+<hr style="margin:40px 0;" />
+
+<div id="result-section">
+
+    @if (ViewBag.IsValid != null)
+    {
+        @* if (ViewBag.IsValid == true)
+        {
+            <h3 style="color:green; text-align:center;">✔ Certificate Verified</h3>
+
+            <!-- ✅ LOAD YOUR EXISTING VIEW HERE -->
+            @await Html.PartialAsync("~/Views/Certificate_Verification/CertificateView.cshtml", Model)
+        } *@
+        @if (ViewBag.IsValid == true)
+        {
+            <div class="verify-success-card">
+
+                <!-- HEADER -->
+                <div class="verify-header">
+                    <div class="verify-icon">✔</div>
+
+                    <h2>Certificate Verified</h2>
+
+                    <p>
+                        This certificate is officially verified and issued by
+                        <b>Fourm Consulting Engineers</b>.
+                    </p>
+
+                    @* <span class="verify-badge">VERIFIED</span> *@
+                </div>
+
+                <!-- CERTIFICATE -->
+                <div class="verify-certificate">
+                    <partial name="~/Views/Certificate_Verification/CertificateView.cshtml" model="Model" />
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="notfound-card">
+
+                <div class="icon">❌</div>
+
+                <h2>Certificate Not Found</h2>
+
+                <p>
+                    The certificate is not available in our records.<br />
+                    Please complete your course and register to get certified.
+                </p>
+
+                <a href="/Registration" class="register-btn">
+                    Register Now
+                </a>
+
+            </div>
+        }
+    }
+    
 </div>
