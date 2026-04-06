@@ -67,33 +67,53 @@ body {
 /* ============================= */
 /* NAVBAR */
 /* ============================= */
-
 .navbar {
-    background: #fff;
-    border-bottom: 2px solid var(--primary);
+    background: #03181a;
     padding: 10px 0;
+    position: relative;
+    z-index: 9999;
 }
-
-.nav-list {
-    list-style: none;
+.nav-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
 }
 
-    .nav-list a {
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+    .nav-list li a {
+        color: #fff;
         text-decoration: none;
-        color: #000;
-        font-weight: 600;
-        padding: 8px 10px;
+        font-size: 14px;
         transition: 0.3s;
     }
 
-        .nav-list a:hover,
-        .nav-list a.active {
-            color: var(--primary);
-            border-bottom: 3px solid var(--primary);
+       .nav-list li a:hover,
+        .nav-list li a.active {
+            color: #ffcc00;
         }
+.login-btn a {
+    background: #ffcc00;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+    .login-btn a:hover {
+        background: #ffc107;
+    }
 
 /* ============================= */
 /* HERO SECTION */
@@ -482,28 +502,43 @@ body {
 
 @media (max-width: 768px) {
 
-    .overlay-content {
-        left: 5%;
-        right: 5%;
-        text-align: center;
-    }
-
-        .overlay-content h1 {
-            font-size: 2rem;
-        }
-
-    .stat-card {
-        flex: 0 0 100%;
+    .menu-toggle {
+        display: block;
     }
 
     .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #03181a;
         flex-direction: column;
-        gap: 10px;
+        display: none; /* IMPORTANT */
+        padding: 20px 0;
+        z-index: 999;
     }
 
-    .header .container {
-        flex-direction: column;
-        text-align: center;
+        .nav-list.active {
+            display: flex;
+        }
+
+        .nav-list li {
+            text-align: center;
+            padding: 12px 0;
+        }
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border-radius: 0;
+        display: none;
+        background: #022b2e;
+    }
+
+    .dropdown.active > .dropdown-menu {
+        display: block;
     }
 }
 /* ============================= */
@@ -555,10 +590,12 @@ body {
             }
 
 /* Show dropdown on hover */
-.dropdown:hover > .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+@media (min-width: 769px) {
+    .dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 
 /* Arrow rotation effect */
@@ -574,23 +611,7 @@ body {
 /* MOBILE DROPDOWN FIX */
 /* ============================= */
 
-@media (max-width: 768px) {
 
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        border-radius: 0;
-        display: none;
-        background: #f9f9f9;
-    }
-
-    .dropdown.active > .dropdown-menu {
-        display: block;
-    }
-}
 html {
     scroll-behavior: smooth;
 }
