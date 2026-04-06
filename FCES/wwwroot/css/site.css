@@ -88,10 +88,44 @@ body {
 /* HAMBURGER */
 .menu-toggle {
     display: none;
-    font-size: 24px;
-    color: #fff;
+    width: 30px;
+    height: 22px;
+    position: relative;
     cursor: pointer;
+    z-index: 10001;
 }
+    .menu-toggle span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        left: 0;
+        transition: 0.4s;
+    }
+        .menu-toggle span:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-toggle span:nth-child(3) {
+            top: 18px;
+        }
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 9px;
+    }
     .nav-list li a {
         color: #fff;
         text-decoration: none;
@@ -499,40 +533,87 @@ body {
         flex: 0 0 100%;
     }
 }
-
 @media (max-width: 768px) {
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #03181a;
+        flex-direction: column;
+        padding-top: 80px;
+        transition: 0.4s ease;
+        z-index: 10000;
+    }
+
+    .nav-list.active {
+        left: 0;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        z-index: 9999;
+    }
+}
+
+/*@media (max-width: 768px) {
 
     .menu-toggle {
         display: block;
     }
 
     .nav-list {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
         background: #03181a;
         flex-direction: column;
-        display: none; /* IMPORTANT */
-        padding: 20px 0;
-        z-index: 999;
+        padding-top: 80px;
+        transition: 0.4s ease;
+        z-index: 10000;
     }
 
         .nav-list.active {
-            display: flex;
+            left: 0;
         }
 
         .nav-list li {
-            text-align: center;
-            padding: 12px 0;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-    .dropdown-menu {
+
+            .nav-list li a {
+                display: block;
+                padding-left: 10px;
+            }*/
+
+    /* OVERLAY BACKGROUND */
+    /*.menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        z-index: 9999;
+    }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }*/
+
+    /* DROPDOWN MOBILE */
+    /*.dropdown-menu {
         position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        border-radius: 0;
         display: none;
         background: #022b2e;
     }
@@ -540,7 +621,7 @@ body {
     .dropdown.active > .dropdown-menu {
         display: block;
     }
-}
+}*/
 /* ============================= */
 /* DROPDOWN MENU */
 /* ============================= */
@@ -711,5 +792,151 @@ html {
 
     100% {
         transform: translateX(-50%);
+    }
+}
+/*--------------------------------*/
+/* ============================= */
+/* MECHANICAL PREMIUM FOOTER */
+/* ============================= */
+
+.mech-footer {
+    position: relative;
+    background: linear-gradient(135deg, #020d0f, #0a2a66);
+    color: #ccc;
+    padding: 100px 0 30px;
+    overflow: hidden;
+}
+
+/* GLASS CONTAINER */
+.mech-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* COLUMN */
+.mech-col h2,
+.mech-col h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    color: #ffcc00;
+}
+
+/* TEXT */
+.mech-col p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.mech-col ul {
+    list-style: none;
+}
+
+    .mech-col ul li {
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+
+        .mech-col ul li:hover {
+            transform: translateX(6px);
+            color: #ffcc00;
+        }
+
+/* SOCIAL */
+.mech-social {
+    margin-top: 20px;
+}
+
+    .mech-social a {
+        display: inline-block;
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        transition: 0.4s;
+    }
+
+        .mech-social a:hover {
+            background: #ffcc00;
+            color: #000;
+            transform: rotate(360deg) scale(1.1);
+        }
+
+/* BOTTOM */
+.mech-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ============================= */
+/* WAVE ANIMATION */
+/* ============================= */
+
+.waves span {
+    position: absolute;
+    width: 200%;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 45%;
+    animation: wave 10s linear infinite;
+}
+
+    .waves span:nth-child(1) {
+        bottom: 0;
+        animation-duration: 12s;
+    }
+
+    .waves span:nth-child(2) {
+        bottom: 10px;
+        animation-duration: 8s;
+        opacity: 0.6;
+    }
+
+    .waves span:nth-child(3) {
+        bottom: 20px;
+        animation-duration: 6s;
+        opacity: 0.4;
+    }
+
+@keyframes wave {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+    .mech-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .mech-container {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
