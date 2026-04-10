@@ -35,14 +35,18 @@
         document.getElementById(modalId).style.display = "none";
     }
 </script>
+
 <section class="hero">
     <div class="slider">
-        <img src="@Url.Content("~/image/hedder home page1.jfif")" alt="Pipeline 1" class="slide active" />
-        <img src="@Url.Content("~/image/image2.jfif")" alt="Pipeline 2" class="slide" />
-        @* <img src="@Url.Content("~/image/image3.jfif")" alt="Pipeline 3" class="slide" /> *@
+        
+        <img src="@Url.Content("~/image/home1.png")" alt="Pipeline 1" class="slide active" />
+        <img src="@Url.Content("~/image/home2.jfif")" alt="Pipeline 2" class="slide" />
+        <img src="@Url.Content("~/image/home3.jfif")" alt="Pipeline 3" class="slide" />
+        @* <img src="@Url.Content("~/image/home4.jfif")" alt="Pipeline 4" class="slide" /> *@
     </div>
 
     <div class="overlay-content">
+        
         <h1>Master Quality<br />Courses with FCES</h1>
         <p>Delivering world-class engineering excellence in the energy sector.</p>
         <button class="hero-btn">Click Here</button>
@@ -81,16 +85,6 @@
 
 
 
-    <!-- NORMAL CONTAINER CONTENT -->
-    @* <div class="container">
-        <div class="about">
-            <h3>About Advantech NDT Academy</h3>
-            <p>
-                Advantech NDT Academy is a renowned & reputed institute providing training for NDT & QA/QC.
-            </p>
-            <a class="read-more" href="#">Read More</a>
-        </div>
-    </div> *@
     <section class="premium-about dark-section">
 
         <div class="container about-flex">
@@ -380,36 +374,123 @@
     </div>
 
 </section>
-@* <section class="services-section">
+<section class="online-courses premium-section">
+    <div class="container">
 
-    <h2 class="services-title">Our Services</h2>
-
-    <div class="services-slider">
-
-        <div class="service-card">
-            <img src="~/image/training and certification.jpg" alt="Training" />
-            <h3>Training and Certification</h3>
+        <div class="section-header">
+            <h2>Online Courses We Offered</h2>
+            <p>
+                FCES offers comprehensive paid online/e-training programs in NDT and QA/QC
+                for professionals seeking flexible learning without compromising quality.
+            </p>
         </div>
 
-        <div class="service-card">
-            <img src="~/image/non-destructive testing & inspection services.jpg" alt="NDT" />
-            <h3>Non-Destructive Testing & Inspection</h3>
+        <div class="online-grid">
+
+            <!-- Card 1 -->
+            <div class="online-card">
+                <div class="icon"><i class="fas fa-video"></i></div>
+                <h3>Course Structure</h3>
+                <p>
+                    High-quality video lectures, downloadable study materials, quizzes,
+                    and live Q&A sessions with certified Level III instructors.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="online-card">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Typical Duration</h3>
+                <p>
+                    Online theory sessions for NDT/QA/QC typically run for
+                    4 to 8 weeks (self-paced).
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="online-card">
+                <div class="icon"><i class="fas fa-certificate"></i></div>
+                <h3>Validity</h3>
+                <p>
+                    The online course access and training completion certificate
+                    are valid for 6 months from the date of enrollment.
+                </p>
+            </div>
+
         </div>
 
-        <div class="service-card">
-            <img src="~/image/third-party mechanical inspection services.jpg" alt="Mechanical" />
-            <h3>Third-Party Mechanical Inspection</h3>
-        </div>
-
-        <div class="service-card">
-            
-            <img src="~/image/manpower supply services.jpg" alt="Manpower" />
-            <h3>Manpower Supply Services</h3>
+        <div class="online-cta">
+            <a href="#courses" class="premium-btn">Explore Courses</a>
         </div>
 
     </div>
-
 </section>
- *@
+<section class="courses-offered premium-section-light">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>🚀 Courses We Offered</h2>
+            <p>
+                These programs feature intensive, hands-on training conducted at our
+                state-of-the-art campus.
+            </p>
+        </div>
+
+        <div class="courses-grid">
+
+            <!-- NDT -->
+            <div class="course-box">
+                <div class="course-icon"> <h3>🎯 NDT Level – II Certification</h3></div>
+                
+                <p>
+                    Practical and theoretical training in UT, RT, DPT, MPT, VT, and ECT
+                    with hands-on sessions.
+                </p>
+            </div>
+
+            <!-- Codes -->
+            <div class="course-box">
+                <div class="course-icon"><h3>📘 Codes & Standards</h3></div>
+                
+                <p>
+                    Coverage of ASME, ASTM, API, AWS and inspection practices.
+                </p>
+            </div>
+
+            <!-- QA QC -->
+            <div class="course-box">
+                <div class="course-icon"> <h3>⚙ Q.A. / Q.C.</h3></div>
+                
+                <p>
+                    Industry-focused QA/QC training for oil & gas and infrastructure.
+                </p>
+            </div>
+
+            <!-- Welding -->
+            <div class="course-box">
+                <div class="course-icon"> <h3>🔥 Welding Technology</h3></div>
+                
+                <p>
+                    Training in welding processes, WPS, PQR, and real-world practice.
+                </p>
+            </div>
+
+            <!-- International -->
+            <div class="course-box wide">
+                <div class="course-icon"> <h3> 🌍 International Preparatory Programs</h3></div>
+                
+                <p>
+                    CSWIP, AWS, NACE, NEBOSH & more with exam-focused training.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="course-cta">
+            <a href="#courses" class="premium-btn">Enroll Now</a>
+        </div>
+
+    </div>
+</section>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
