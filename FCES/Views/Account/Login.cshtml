@@ -1,0 +1,117 @@
+﻿@model FCES.Models.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mechanical Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="~/css/logincss.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+
+    <!-- ⚙️ Gears -->
+    <img src="~/image/gear.png" class="gear gear1" />
+    <img src="~/image/gear.png" class="gear gear2" />
+    <img src="~/image/gear.png" class="gear gear3" />
+    <img src="~/image/gear.png" class="gear gear4" />
+    <img src="~/image/gear.png" class="gear gear5" />
+    <img src="~/image/gear.png" class="gear gear6" />
+    <div class="login-container">
+        <h2>⚙️ ENGINEER LOGIN</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <p class="error">@ViewBag.Error</p>
+        }
+
+        <form method="post">
+
+            <div class="input-box">
+                <input asp-for="Username" placeholder="Email or Mobile" />
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" id="password" type="password" placeholder="Password" />
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+            <div class="extra">
+                <a id="signupLink" onclick="openSignup()">New User? Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 🧾 Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <h3>Sign Up</h3>
+
+            <form method="post" asp-action="Register">
+
+                <input name="Name" placeholder="Full Name" required />
+
+                <input name="Mobile" placeholder="Mobile Number" required />
+
+                <input name="Email" placeholder="Email Address" required />
+
+                <input name="Password" type="password" placeholder="Password" required />
+
+                <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required />
+
+                <select name="Course" required>
+                    <option value="">Select Course</option>
+                    <option>QC</option>
+                    <option>NDT</option>
+                    <option>Welding & Piping</option>
+                    <option>Quantity Surveying</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <button onclick="closeSignup()">Close</button>
+        </div>
+    </div>
+    @if (ViewBag.HighlightSignup != null)
+    {
+        <script>
+            window.onload = function () {
+                document.getElementById("signupLink").classList.add("highlight");
+            }
+        </script>
+    }
+    <script>
+        function openSignup() {
+            document.getElementById("signupModal").style.display = "flex";
+        }
+
+        function closeSignup() {
+            document.getElementById("signupModal").style.display = "none";
+        }
+
+        function togglePassword() {
+            var x = document.getElementById("password");
+            x.type = x.type === "password" ? "text" : "password";
+        }
+
+        // 🔥 Auto open on login fail
+        @if (ViewBag.ShowSignup != null)
+        {
+            <text>
+                    window.onload = function () {
+                        openSignup();
+                    }
+            </text>
+        }
+    </script>
+
+</body>
+</html>

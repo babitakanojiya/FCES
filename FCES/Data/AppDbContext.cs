@@ -12,5 +12,7 @@ namespace FCES.Data
 
         public DbSet<Certificates> Certificates { get; set; }
         public DbSet<Registration> Registration { get; set; }
+        public DbSet<User> Users { get; set; }
+
     }
 }

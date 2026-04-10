@@ -1,0 +1,322 @@
+﻿@model FCES.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mechanical Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <style>
+        .modal {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1c1c1c, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+            body::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, transparent 40%, #000 100%);
+            }
+        /* ⚙️ Gear Animation */
+        /* ⚙️ Base Gear Style */
+        .gear {
+            position: absolute;
+            opacity: 0.70;
+            filter: blur(1px);
+        }
+
+        /* Different sizes + positions + speed */
+
+        /* Top Left */
+        .gear1 {
+            width: 180px;
+            top: 5%;
+            left: 5%;
+            animation: rotateSlow 18s linear infinite;
+        }
+
+        /* Bottom Right */
+        .gear2 {
+            width: 220px;
+            bottom: 5%;
+            right: 5%;
+            animation: rotateReverse 20s linear infinite;
+        }
+
+        /* Top Right */
+        .gear3 {
+            width: 120px;
+            top: 10%;
+            right: 15%;
+            animation: rotateFast 10s linear infinite;
+        }
+
+        /* Bottom Left */
+        .gear4 {
+            width: 150px;
+            bottom: 10%;
+            left: 10%;
+            animation: rotateReverse 16s linear infinite;
+        }
+
+        /* Center Left */
+        .gear5 {
+            width: 100px;
+            top: 50%;
+            left: 2%;
+            animation: rotateSlow 25s linear infinite;
+        }
+
+        /* Center Right */
+        .gear6 {
+            width: 130px;
+            top: 50%;
+            right: 2%;
+            animation: rotateFast 12s linear infinite;
+        }
+
+        /* Animations */
+        @@keyframes rotateSlow {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes rotateFast {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes rotateReverse {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* 🔩 Login Card */
+        .login-container {
+            position: relative;
+            width: 380px;
+            padding: 40px;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #2b2b2b, #1f1f1f);
+            box-shadow: 0 0 25px rgba(0,0,0,0.8);
+            color: #fff;
+            border: 1px solid #444;
+            animation: fadeIn 1s ease;
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            color: #ffcc00;
+        }
+
+        /* 🔧 Inputs */
+        .input-box {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+            .input-box input {
+                width: 100%;
+                padding: 14px;
+                border: 1px solid #555;
+                border-radius: 8px;
+                background: #111;
+                color: #fff;
+                outline: none;
+            }
+
+                .input-box input:focus {
+                    border-color: #ffcc00;
+                    box-shadow: 0 0 10px #ffcc00;
+                }
+
+            .input-box label {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #aaa;
+                transition: 0.3s;
+                font-size: 13px;
+            }
+
+            .input-box input:focus + label,
+            .input-box input:not(:placeholder-shown) + label {
+                top: -8px;
+                font-size: 10px;
+                color: #ffcc00;
+            }
+
+        /* 👁 Password toggle */
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* ⚙️ Button */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #ffcc00, #ffaa00);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .login-btn:hover {
+                background: linear-gradient(45deg, #ffaa00, #ffcc00);
+                box-shadow: 0 0 15px #ffcc00;
+                transform: scale(1.05);
+            }
+
+        .extra {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .error {
+            color: #ff4d4d;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+    <!-- ⚙️ Multiple Gear Background -->
+    <img src="~/image/gear.png" class="gear gear1" />
+    <img src="~/image/gear.png" class="gear gear2" />
+    <img src="~/image/gear.png" class="gear gear3" />
+    <img src="~/image/gear.png" class="gear gear4" />
+    <img src="~/image/gear.png" class="gear gear5" />
+    <img src="~/image/gear.png" class="gear gear6" />
+
+    <div class="login-container">
+        <h2>⚙️ ENGINEER LOGIN</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <p class="error">@ViewBag.Error</p>
+        }
+
+        <form method="post">
+
+            <div class="input-box">
+                <input asp-for="Username" required placeholder=" " />
+                <label>Email or Mobile</label>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" id="password" type="password" required placeholder=" " />
+                <label>Password</label>
+                <span class="toggle-password" onclick="togglePassword()">👁</span>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+            <div class="extra">
+                Mechanical Engineering Portal
+            </div>
+
+        </form>
+    </div>
+    <div id="signupModal" class="modal" style="display:@(ViewBag.ShowSignup != null ? "flex" : "none")">
+        <div class="modal-content">
+            <h3>Sign Up</h3>
+
+            <form method="post" asp-action="Register">
+
+                <input name="Name" placeholder="Full Name" required />
+                <input name="Email" placeholder="Email" required />
+                <input name="Mobile" placeholder="Mobile" required />
+                <input name="Password" type="password" placeholder="Password" required />
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var x = document.getElementById("password");
+            x.type = x.type === "password" ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>
