@@ -2,213 +2,104 @@
     ViewData["Title"] = "Paid Online Courses (e-Learning)";
 }
 
-
-<style>
-    /* BACKGROUND IMAGE BOX */
-    .about-box {
-        position: relative;
-        height: 100%;
-        min-height: 280px;
-        background-image: url('/Image/aboutasbody.jpg') !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        border-radius: 12px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+<link href="~/css/course-page.css" rel="stylesheet" />
+@model List<CourseModel>
 
 
-    /* DARK OVERLAY */
-    .about-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.55); /* adjustable darkness */
-    }
 
-    /* TEXT OVER IMAGE */
-    .about-text {
-        position: relative;
-        color: #fff;
-        text-align: center;
-        padding: 30px;
-        z-index: 2;
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-        .about-text h3 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .about-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-    /* MOBILE RESPONSIVE */
-    @@media (max-width: 768px) {
-        .about-text h3 {
-            font-size: 22px;
-        }
-
-        .about-text p {
-            font-size: 16px;
-        }
-    }
-
-    /* HERO IMAGE */
-    .hero-section {
-        position: relative;
-        width: 100%;
-        height: 350px;
-        background-image: url('/image/onlineclassnew.jfif'); /* ✅ fixed */
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* TEXT OVER IMAGE */
-    .hero-title {
-        font-size: 48px;
-        font-weight: 700;
-        color: #ffffff;
-        text-shadow: 0px 3px 10px rgba(0,0,0,0.6);
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-    /* Fade Animation */
-    @@keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* CONTENT SECTION */
-    .content-section {
-        padding: 50px 15px;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .content-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-
-    .content-box {
-        background: lavenderblush;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-        font-size: 18px;
-        line-height: 1.6;
-        color: #333;
-    }
-
-    /* RESPONSIVE */
-    @@media (max-width: 768px) {
-        .content-row {
-            grid-template-columns: 1fr;
-        }
-
-        .hero-title {
-            font-size: 32px;
-        }
-    }
-</style>
 <!-- HERO IMAGE WITH TEXT -->
 <div class="hero-section">
-    <h1 class="hero-title">Online Courses (e-Learning)</h1>   @* Your header on image *@
+    <h1 class="hero-title">Online Courses (e-Learning)</h1>   
 </div>
-<div style="
-    width:100%;
-    background:#ffe6f2;        /* light pink */
-    padding:18px 0;
-    text-align:center;
-    margin-top:0;
-">
-    <h2 style="margin:0; font-size:30px; font-weight:700; color:#333;">
-        Online Courses We Offered
-    </h2>
-    <h3>"FCES offers comprehensive paid online/e-training programs in NDT and QA/QC for professionals seeking flexible learning without compromising quality."</h3>
+<!-- PREMIUM TITLE SECTION -->
+<div class="title-section">
+    <h2 class="main-title">Explore Our Online Courses</h2>
+    <p class="sub-title">
+        FCES offers comprehensive paid online/e-training programs in NDT and QA/QC
+        for professionals seeking flexible learning without compromising quality.
+    </p>
 </div>
 
-<!-- BODY CONTENT -->
-<div class="content-section">
-    <div class="content-row">
+<div class="course-wrapper">
 
+    <!-- LEFT SIDE -->
+    <div class="course-sidebar">
 
-        <div class="content-box about-box">
-            <div class="about-overlay"></div>
-            <div class="about-text">
-                <h3><b>Course Structure </b></h3>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var parent in Model.GroupBy(x => x.ParentCourse))
+            {
+                <div class="course-group">
 
-            </div>
-        </div>
+                    <!-- Parent Heading -->
+                    <div class="parent-heading" onclick="loadFirstChild(this)">
+                        @parent.Key
+                    </div>
 
-        <!-- RIGHT PART TEXT -->
-        <div class="content-box">
+                    <!-- Child Courses -->
+                    <div class="child-list">
+                        @foreach (var item in parent)
+                        {
+                            <div class="child-item"
+                                 data-url="@item.VideoUrl"
+                                 onclick="loadVideo(this.dataset.url, this)">
+                                ▶ @item.ChildCourse
+                            </div>
+                        }
+                    </div>
 
-            <p>
-                High-quality video lectures, downloadable study materials, quizzes, and live Q&A sessions with certified Level III instructors.
-            </p>
-        </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No courses available</p>
+        }
 
     </div>
 
-    <div class="content-row">
+    <!-- RIGHT SIDE -->
+    <div class="course-content">
+        <iframe id="videoFrame" src="" allowfullscreen></iframe>
 
-        <!-- RIGHT PART TEXT -->
-        <div class="content-box">
-
-            <p>
-                Online theory sessions for NDT/QA/QC typically run for 4 to 8 weeks (self-paced).
-            </p>
-        </div>
-        <div class="content-box about-box">
-            <div class="about-overlay"></div>
-            <div class="about-text">
-                <h3><b>Typical Duration</b></h3>
-
-            </div>
+        <div class="video-placeholder" id="placeholder">
+            <h2>Select a course to start learning</h2>
         </div>
     </div>
-    <div class="content-row">
 
-
-        <div class="content-box about-box">
-            <div class="about-overlay"></div>
-            <div class="about-text">
-                <h3><b>Validity of Online Course</b></h3>
-
-            </div>
-        </div>
-
-        <!-- RIGHT PART TEXT -->
-        <div class="content-box">
-
-            <p>
-                The online course access and training completion certificate are valid for 6 months from the date of enrollment.
-            </p>
-        </div>
-
-    </div>
-
-    
 </div>
+<script>
+    function loadVideo(url, el) {
+        document.getElementById("videoFrame").src = url;
+        document.getElementById("placeholder").style.display = "none";
+
+        // remove all active
+        document.querySelectorAll(".child-item").forEach(x => x.classList.remove("active"));
+
+        // set active
+        if (el) {
+            el.classList.add("active");
+        }
+    }
+
+    // ✅ LOAD FIRST CHILD OF CLICKED PARENT
+    function loadFirstChild(parentEl) {
+        let parentGroup = parentEl.closest(".course-group");
+        let firstChild = parentGroup.querySelector(".child-item");
+
+        if (firstChild) {
+            let url = firstChild.dataset.url;
+            loadVideo(url, firstChild);
+        }
+    }
+
+    // ✅ AUTO LOAD FIRST VIDEO ON PAGE LOAD
+    window.onload = function () {
+        let firstItem = document.querySelector(".child-item");
+
+        if (firstItem) {
+            let url = firstItem.dataset.url;
+            loadVideo(url, firstItem);
+        }
+    };
+</script>
